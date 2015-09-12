@@ -1,0 +1,6 @@
+[core]
+	autocrlf = input
+	editor = vim
+[user]
+	name = Sun Wang Jun
+	email = sunxperous@gmail.com
