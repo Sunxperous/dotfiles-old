@@ -7,6 +7,9 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
+Plugin 'ervandew/supertab'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 
@@ -399,3 +402,8 @@ function! <SID>BufcloseCloseIt()
      execute("bdelete! ".l:currentBufNum)
    endif
 endfunction
+
+" Lightline.
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ }
