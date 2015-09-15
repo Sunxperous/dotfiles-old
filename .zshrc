@@ -88,3 +88,6 @@ prompt pure
 ZSH_THEME="pure"
 
 export EDITOR='vim'
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
