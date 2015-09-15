@@ -53,7 +53,7 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH=".:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -86,3 +86,5 @@ source $ZSH/oh-my-zsh.sh
 autoload -U promptinit && promptinit
 prompt pure
 ZSH_THEME="pure"
+
+export EDITOR='vim'

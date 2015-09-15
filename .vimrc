@@ -36,7 +36,8 @@ nmap <leader>w :w!<cr>
 
 " :W sudo saves the file 
 " (useful for handling the permission-denied error)
-command W w !sudo tee % > /dev/null
+" Find a way to do :W! instead of :W.
+" command W w !sudo tee % > /dev/null
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -120,7 +121,7 @@ set tm=500
 syntax enable 
 
 try
-    colorscheme Tomorrow-Night
+    colorscheme tomorrow-night
 catch
 endtry
 
