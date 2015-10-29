@@ -12,6 +12,7 @@ Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
+Plugin 'ctrlpvim/ctrlp.vim'
 
 call vundle#end()
 
