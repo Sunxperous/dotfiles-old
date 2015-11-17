@@ -414,3 +414,6 @@ endfunction
 let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ }
+
+" Timeout delay when escaping from non-normal modes.
+set timeout timeoutlen=100 ttimeoutlen=1
