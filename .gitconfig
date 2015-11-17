@@ -2,6 +2,7 @@
 	autocrlf = input
 	editor = vim
 	pager = less -F -X
+	excludesfile = /Users/Sunxperous/.gitignore_global
 [user]
 	name = Sun Wang Jun
 	email = sunxperous@gmail.com
