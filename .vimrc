@@ -119,8 +119,8 @@ set tm=500
 " Add a bit extra margin to the left
 " set foldcolumn=1
 
-" Show a visible indicator at specific column
-set colorcolumn=80
+" Show a visible indicator at specific columns
+set colorcolumn=80,100,120
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
