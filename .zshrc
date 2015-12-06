@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Sunxperous/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -52,6 +52,8 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 # User configuration
+
+fpath=( "$HOME/.zsh-functions" $fpath )
 
 export PATH=".:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 # export MANPATH="/usr/local/man:$MANPATH"
