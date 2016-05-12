@@ -13,6 +13,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 
