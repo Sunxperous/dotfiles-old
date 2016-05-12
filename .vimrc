@@ -45,6 +45,10 @@ nmap <leader>w :w!<cr>
 " Find a way to do :W! instead of :W.
 " command W w !sudo tee % > /dev/null
 
+" Automatically change the current directory
+set autochdir
+" audocmd BufEnter * silent! lcd %:p:h
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VIM user interface
