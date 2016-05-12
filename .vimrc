@@ -14,6 +14,7 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'tpope/vim-sleuth'
 
 call vundle#end()
 
@@ -24,6 +25,7 @@ call vundle#end()
 set history=500
 
 " Enable filetype plugins
+set autoindent
 filetype plugin on
 filetype indent on
 
