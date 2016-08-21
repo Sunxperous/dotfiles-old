@@ -13,7 +13,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'Yggdroot/indentLine'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-sleuth'
 
@@ -425,11 +425,6 @@ endfunction
 let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ }
-
-" Indent guides.
-let g:indent_guides_enable_on_vim_startup = 0 " Whether to enable indent guides on startup.
-let g:indent_guides_default_mapping = 0 " Whether to enable mapping for enabling/disabling indent guides.
-let g:indent_guides_start_level = 2 " Only start indent guides from the given indent level.
 
 " Timeout delay when escaping from non-normal modes.
 set timeout timeoutlen=100 ttimeoutlen=1
