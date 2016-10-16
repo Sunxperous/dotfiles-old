@@ -10,11 +10,17 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 Plugin 'ervandew/supertab'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'scrooloose/syntastic'
+Plugin 'othree/yajs.vim'
+Plugin 'HerringtonDarkholme/yats.vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Quramy/tsuquyomi'
+Plugin 'mileszs/ack.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'andviro/flake8-vim'
 Plugin 'tpope/vim-sleuth'
 
 call vundle#end()
@@ -407,3 +413,14 @@ let g:lightline = {
 
 " Timeout delay when escaping from non-normal modes.
 set timeout timeoutlen=100 ttimeoutlen=1
+
+" ack.vim with ag (The Silver Searcher)
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+
+set shellpipe=>
+
+" Tsuquyomi
+let g:tsuquyomi_disable_quickfix = 1
+let g:syntastic_typescript_checkers = ['tsuquyomi']
