@@ -89,3 +89,13 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
 source /usr/local/bin/virtualenvwrapper.sh
+
+# Completion for Tmuxinator.
+source ~/.tmuxinator/tmuxinator.zsh
+
+# FZF.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Base16 Shell
+BASE16_SHELL=$HOME/.config/base16-shell/
+[ -n "$PS1" ] && [ -s $BASE16_SHELL/profile_helper.sh ] && eval "$($BASE16_SHELL/profile_helper.sh)"

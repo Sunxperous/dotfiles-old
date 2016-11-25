@@ -4,26 +4,25 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'ervandew/supertab'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'scrooloose/syntastic'
-Plugin 'othree/yajs.vim'
-Plugin 'HerringtonDarkholme/yats.vim'
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'mileszs/ack.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Yggdroot/indentLine'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'andviro/flake8-vim'
-Plugin 'tpope/vim-sleuth'
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'ervandew/supertab'
+Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/syntastic'
+Plug 'othree/yajs.vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'mxw/vim-jsx'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'Quramy/tsuquyomi'
+Plug 'kchmck/vim-coffee-script'
+Plug 'Yggdroot/indentLine'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'tpope/vim-sleuth'
+Plug 'chriskempson/base16-vim'
 
-call vundle#end()
+call plug#end()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General
@@ -35,6 +34,7 @@ set history=500
 set autoindent
 filetype plugin on
 filetype indent on
+au! FileType python setl nosmartindent  " Prevent comment un-indentation.
 
 " Set to auto read when a file is changed from the outside
 set autoread
@@ -53,7 +53,7 @@ nmap <leader>w :w!<cr>
 " command W w !sudo tee % > /dev/null
 
 " Automatically change the current directory
-set autochdir
+" set autochdir
 " audocmd BufEnter * silent! lcd %:p:h
 
 
@@ -138,20 +138,12 @@ set colorcolumn=80,100,120
 " Enable syntax highlighting
 syntax enable 
 
-try
-    colorscheme tomorrow-night
-catch
-endtry
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 set background=dark
-
-" Set extra options when running in GUI mode
-if has("gui_running")
-    set guioptions-=T
-    set guioptions-=e
-    set t_Co=256
-    set guitablabel=%M\ %t
-endif
 
 " Set utf8 as standard encoding and en_US as the standard language
 set encoding=utf8
@@ -302,36 +294,6 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Ag searching and cope displaying
-"    requires ag.vim - it's much better than vimgrep/grep
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" When you press gv you Ag after the selected text
-vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
-
-" Open Ag and put the cursor in the right position
-map <leader>g :Ag 
-
-" When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace', '')<CR>
-
-" Do :help cope if you are unsure what cope is. It's super useful!
-"
-" When you search with Ag, display your results in cope by doing:
-"   <leader>cc
-"
-" To go to the next search result do:
-"   <leader>n
-"
-" To go to the previous search results do:
-"   <leader>p
-"
-map <leader>cc :botright cope<cr>
-map <leader>co ggVGy:tabnew<cr>:set syntax=qf<cr>pgg
-map <leader>n :cn<cr>
-map <leader>p :cp<cr>
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Misc
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Remove the Windows ^M - when the encodings gets messed up
@@ -414,13 +376,9 @@ let g:lightline = {
 " Timeout delay when escaping from non-normal modes.
 set timeout timeoutlen=100 ttimeoutlen=1
 
-" ack.vim with ag (The Silver Searcher)
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
-set shellpipe=>
-
 " Tsuquyomi
 let g:tsuquyomi_disable_quickfix = 1
 let g:syntastic_typescript_checkers = ['tsuquyomi']
+
+" FZF
+" let $FZF_DEFAULT_COMMAND = 'ag --nogroup --nocolor'
