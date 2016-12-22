@@ -21,6 +21,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-sleuth'
 Plug 'chriskempson/base16-vim'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
